@@ -1,0 +1,3 @@
+// get admin access code
+curl -X POST --user "lambda-client:lambda-secret" -d "grant_type=password&username=admin&password=password" https://allisonkydy-schooldeploy.herokuapp.com/login
+
