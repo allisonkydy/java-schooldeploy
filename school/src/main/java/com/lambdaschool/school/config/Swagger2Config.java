@@ -1,5 +1,8 @@
 package com.lambdaschool.school.config;
 
+import com.fasterxml.classmate.TypeResolver;
+import com.lambdaschool.school.model.ErrorDetail;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.domain.Pageable;
@@ -11,11 +14,15 @@ import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 @Configuration
 @EnableSwagger2
 public class Swagger2Config
 {
+  @Autowired
+  private TypeResolver resolver;
+
   @Bean
   public Docket api()
   {
@@ -28,7 +35,12 @@ public class Swagger2Config
         .build()
         .useDefaultResponseMessages(false) // Allows only my exception responses
         .ignoredParameterTypes(Pageable.class) // allows only my paging parameter list
-        .apiInfo(apiEndPointsInfo());
+        .apiInfo(apiEndPointsInfo())
+        .pathMapping("/")
+        .additionalModels(resolver.resolve(APIOpenLibrary.class),
+                          resolver.resolve(TokenModel.class),
+                          resolver.resolve(ErrorDetail.class))
+        .ignoredParameterTypes(SimpleGrantedAuthority.class);
   }
 
   private ApiInfo apiEndPointsInfo()
