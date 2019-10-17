@@ -1,7 +1,7 @@
 package com.lambdaschool.school.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.lambdaschool.starthere.logging.Loggable;
+import com.lambdaschool.school.logging.Loggable;
 
 import javax.persistence.*;
 import java.io.Serializable;

@@ -1,7 +1,9 @@
 package com.lambdaschool.school.config;
 
 import com.fasterxml.classmate.TypeResolver;
+import com.lambdaschool.school.model.APIOpenLibrary;
 import com.lambdaschool.school.model.ErrorDetail;
+import com.lambdaschool.school.model.TokenModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

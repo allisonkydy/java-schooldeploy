@@ -7,9 +7,6 @@ FROM course;
 DELETE
 FROM student;
 
-DELETE
-FROM instructor;
-
 INSERT INTO instructor (instructid, instructname)
     VALUES(1, 'Sally'),
           (2, 'Lucy'),

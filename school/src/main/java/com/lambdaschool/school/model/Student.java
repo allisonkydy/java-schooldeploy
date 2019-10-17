@@ -19,6 +19,10 @@ public class Student extends Auditable
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long studid;
 
+//    @OneToOne
+//    @JoinColumn(name = "userid", nullable = true)
+//    private User user;
+
     @ApiModelProperty(name = "studname", value = "Student name", example = "Allison")
     private String studname;
 

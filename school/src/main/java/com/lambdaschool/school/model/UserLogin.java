@@ -1,6 +1,6 @@
 package com.lambdaschool.school.model;
 
-import com.lambdaschool.starthere.logging.Loggable;
+import com.lambdaschool.school.logging.Loggable;
 
 // for manual documentation in SwaggerManualApiPlugin
 // used so that custom swagger documentation reflects exactly what is needed to login to the server

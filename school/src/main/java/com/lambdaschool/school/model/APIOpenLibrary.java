@@ -1,6 +1,6 @@
 package com.lambdaschool.school.model;
 
-import com.lambdaschool.starthere.logging.Loggable;
+import com.lambdaschool.school.logging.Loggable;
 
 // creates a model to hold the data that comes back from another API
 

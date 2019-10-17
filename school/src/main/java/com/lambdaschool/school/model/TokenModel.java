@@ -1,6 +1,6 @@
 package com.lambdaschool.school.model;
 
-import com.lambdaschool.starthere.logging.Loggable;
+import com.lambdaschool.school.logging.Loggable;
 
 @Loggable
 public class TokenModel
