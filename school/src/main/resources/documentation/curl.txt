@@ -1,3 +1,34 @@
 // get admin access code
 curl -X POST --user "lambda-client:lambda-secret" -d "grant_type=password&username=admin&password=password" https://allisonkydy-schooldeploy.herokuapp.com/login
 
+// students
+POST -- add a new student
+curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer 406dd4e2-1921-40ae-b577-f87748e75d13" -d "{\"studname\": \"Ginger\"}" https://allisonkydy-schooldeploy.herokuapp.com/students/student
+
+GET -- find a student using student id
+curl -X GET -H "Accept: application/json" -H "Authorization: Bearer 406dd4e2-1921-40ae-b577-f87748e75d13" https://allisonkydy-schooldeploy.herokuapp.com/students/student/24
+
+PUT -- update a student
+curl -X PUT -H "Content-Type: application/json" -H "Authorization: Bearer 406dd4e2-1921-40ae-b577-f87748e75d13" -d "{\"studname\": \"Johnny\"}" https://allisonkydy-schooldeploy.herokuapp.com/students/student/24
+
+DELETE -- delete a student using student id
+curl -X DELETE -H "Authorization: Bearer 406dd4e2-1921-40ae-b577-f87748e75d13" https://allisonkydy-schooldeploy.herokuapp.com/students/student/27
+
+PUT -- add a student to a course
+curl -X PUT -H "Content-Type: application/json" -H "Authorization: Bearer 406dd4e2-1921-40ae-b577-f87748e75d13" https://allisonkydy-schooldeploy.herokuapp.com/students/student/24/course/18
+
+GET -- find a student using a name
+curl -X GET -H "Accept: application/json" -H "Authorization: Bearer 406dd4e2-1921-40ae-b577-f87748e75d13" https://allisonkydy-schooldeploy.herokuapp.com/students/student/namelike/j
+
+GET -- list all students
+curl -X GET -H "Accept: application/json" -H "Authorization: Bearer 406dd4e2-1921-40ae-b577-f87748e75d13" https://allisonkydy-schooldeploy.herokuapp.com/students/students
+
+// courses
+GET -- list all courses
+curl -X GET -H "Accept: application/json" -H "Authorization: Bearer 406dd4e2-1921-40ae-b577-f87748e75d13" https://allisonkydy-schooldeploy.herokuapp.com/courses/courses
+
+GET -- list all courses with student counts
+curl -X GET -H "Accept: application/json" -H "Authorization: Bearer 406dd4e2-1921-40ae-b577-f87748e75d13" https://allisonkydy-schooldeploy.herokuapp.com/courses/studcount
+
+DELETE -- delete a course using course id
+curl -X DELETE -H "Authorization: Bearer 406dd4e2-1921-40ae-b577-f87748e75d13" https://allisonkydy-schooldeploy.herokuapp.com/courses/courses/20
